@@ -3379,44 +3379,6 @@
     "thumbnail": "portraits/ticklishlion619-thumb.jpg"
   },
   {
-    "username": "goldenbird725",
-    "password": "pyramid",
-    "name": {
-      "first": "Jesus",
-      "last": "Miller"
-    },
-    "ssn": "264-76-4495",
-    "dob": "1987-09-07T05:00:00.000Z",
-    "hiredOn": "2013-08-15T05:00:00.000Z",
-    "terminatedOn": null,
-    "email": "jesus.miller16@company.com",
-    "phones": [
-      {
-        "type": "office",
-        "number": "470-998-3892"
-      },
-      {
-        "type": "home",
-        "number": "693-601-3471"
-      }
-    ],
-    "address": {
-      "street": "1543 Locust Rd",
-      "city": "Ironville",
-      "state": "Michigan",
-      "zip": "83919"
-    },
-    "roles": [
-      "salaried",
-      "full time",
-      "contractor"
-    ],
-    "department": "Accounting",
-    "gender": "male",
-    "portrait": "portraits/goldenbird725.jpg",
-    "thumbnail": "portraits/goldenbird725-thumb.jpg"
-  },
-  {
     "username": "whitebutterfly382",
     "password": "abigail",
     "name": {

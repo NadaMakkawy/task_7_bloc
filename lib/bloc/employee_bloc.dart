@@ -15,6 +15,7 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
   EmployeeBloc(this._employeeRepository) : super(EmployeeLoadingState()) {
     on<LoadEmployeeEvent>(loadEmployee);
     on<DeleteEmployeeEvent>(deleteEmployee);
+    on<AddEmployeeEvent>(addEmployee);
   }
 
   // FutureOr<void> loadEmployee(
@@ -44,5 +45,11 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
       _employees.removeAt(event.index);
       emit(EmployeeLoadedState(_employees));
     }
+  }
+
+  FutureOr<void> addEmployee(
+      AddEmployeeEvent event, Emitter<EmployeeState> emit) {
+    _employees.add(event.employee);
+    emit(EmployeeLoadedState(_employees));
   }
 }

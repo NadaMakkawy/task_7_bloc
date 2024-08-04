@@ -10,3 +10,9 @@ class DeleteEmployeeEvent extends EmployeeEvent {
 
   DeleteEmployeeEvent(this.index);
 }
+
+class AddEmployeeEvent extends EmployeeEvent {
+  final Employee employee;
+
+  AddEmployeeEvent(this.employee);
+}

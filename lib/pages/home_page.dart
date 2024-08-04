@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/employee_bloc.dart';
-import '../cubit/counter_cubit.dart';
+
+import '../widgets/add_employee_widget.dart';
+import '../widgets/employees_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -42,24 +44,8 @@ class _HomePageState extends State<HomePage> {
             );
           }
           if (state is EmployeeLoadedState) {
-            return ListView.builder(
-              itemCount: state.employees.length,
-              itemBuilder: (context, index) => ListTile(
-                title: Text(
-                  state.employees[index].name?.first ?? 'No Name',
-                ),
-                subtitle: Text(
-                  state.employees[index].email ?? 'No Email',
-                ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed: () {
-                    context
-                        .read<EmployeeBloc>()
-                        .add(DeleteEmployeeEvent(index));
-                  },
-                ),
-              ),
+            return EmployeesList(
+              state: state,
             );
           }
           if (state is EmployeeErrorState) {
@@ -71,10 +57,27 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<CounterCubit>().increment(),
-        tooltip: 'Increment',
+        onPressed: () => _showAddEmployeeDialog(context),
+        tooltip: 'Add Employee',
         child: const Icon(Icons.add),
       ),
+    );
+  }
+
+  void _showAddEmployeeDialog(BuildContext context) {
+    final TextEditingController firstNameController = TextEditingController();
+    final TextEditingController lastNameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AddEmployeeWidget(
+          firstNameController: firstNameController,
+          lastNameController: lastNameController,
+          emailController: emailController,
+        );
+      },
     );
   }
 }
