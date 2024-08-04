@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    context.read<EmployeeBloc>().add(LoadEmoloyeeEvent());
+    context.read<EmployeeBloc>().add(LoadEmployeeEvent());
     super.initState();
   }
 
@@ -50,6 +50,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 subtitle: Text(
                   state.employees[index].email ?? 'No Email',
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () {
+                    context
+                        .read<EmployeeBloc>()
+                        .add(DeleteEmployeeEvent(index));
+                  },
                 ),
               ),
             );
