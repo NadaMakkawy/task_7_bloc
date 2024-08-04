@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/employee_bloc.dart';
-
 import '../widgets/add_employee_widget.dart';
 import '../widgets/employees_list.dart';
 

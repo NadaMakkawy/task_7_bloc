@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_7_bloc/bloc/employee_bloc.dart';
-import 'package:task_7_bloc/cubit/counter_cubit.dart';
+import 'package:task_7_bloc/cubit/counter/counter_cubit.dart';
 import 'package:task_7_bloc/repository/employee_repository.dart';
 
 import 'pages/home_page.dart';

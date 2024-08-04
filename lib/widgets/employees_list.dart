@@ -35,6 +35,11 @@ class EmployeesList extends StatelessWidget {
                   subtitle: Text(
                     state.employees[index].email ?? 'No Email',
                   ),
+                  trailing: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 20,
+                    color: Colors.grey,
+                  ),
                   // trailing: IconButton(
                   //   icon: const Icon(Icons.delete),
                   //   onPressed: () {
